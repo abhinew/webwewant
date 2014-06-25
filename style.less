@@ -1,18 +1,24 @@
 /* LESS Document */
 @headerHeight: 114px;
-@contentWidth: 1043px;
+@contentWidth: 974px;
 @dividerColor: #949494;
-@wrapperbgColor: #231f20;
+@bodybgColor: #231f20;
 @headingColor: #e98f5b;
 @headingFont: "Helvetica";
 @pColor: #8d8d8f;
+
 html, body {
 	margin: 0;
 	height: 100%;
 }
+body {
+	background-color: @bodybgColor;
+}
+
 .wrapper {
-	background-color: @wrapperbgColor;
+	
 	min-height: 100%;
+	
 	header {
 		background-color: #231f20;
 		height: @headerHeight;
@@ -41,7 +47,7 @@ html, body {
 				border-top: 5px solid #ffffff;			
 			}
 			.logo {
-				background-image: url(images/www-logo1.jpg);
+				background-image: url(webwewant/images/www-logo1.jpg);
 				background-repeat: no-repeat;
 				padding-top: 70px;
 				color: #ffffff;
@@ -79,12 +85,14 @@ html, body {
 	}
 
 	.theme {
-		height: calc(100% - 100px);
-		background: url(images/bgtheme.jpg) no-repeat; 
+		height: 827px;
+		background: url(webwewant/images/bgtheme.jpg) no-repeat; 
 		background-size: cover;
 		.content {
 			width: @contentWidth;
 			margin: 0 auto;	
+			height: 837px;
+			position: relative;
 			a {
 				background-color: #ffffff;
 				text-transform: uppercase;
@@ -97,35 +105,68 @@ html, body {
 				color: #424242;
 			}
 			a:after {	
-				content: url(images/play-icon.jpg) no-repeat;
+				content: url(webwewant/images/play-icon.jpg) no-repeat;
 				display: inline-block;
 				vertical-align: middle;
 				padding-left: 5px;
 			}
-			h1 {
+			.theme-heading {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				
+				h1 {
 				margin-bottom: 0px;
 				padding-top: 300px;
+				}
+				h1,h2 {
+					margin-top: 0px;
+					text-transform: uppercase;
+					color: #ffffff;
+					font-family: "Helvetica";
+					font-weight: bold;
+				}
 			}
-			h1,h2 {
-				margin-top: 0px;
-				text-transform: uppercase;
-				color: #ffffff;
-				font-family: "Helvetica";
-				font-weight: bold;
-			}
+			
 		}
 		
 	}
 	.content {
-			width: @contentWidth;
-			margin: 0 auto;
+		width: @contentWidth;
+		margin: 0 auto;
+		.section-head {
+			text-align: center;
+			position:relative;
+			margin-top: 30px;
+		}
+		.section-head:before  {
+			display: block;
+			height: 5px;
+			content: '';
+			background-color: @dividerColor;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 28px;
+			z-index: -1;
+		}
+		
+		.section-head h3 {
+			text-align: center;
+			background-color: @bodybgColor;
+			display: inline-block;
+			font-family: @headingFont;
+			padding: 0 20px;
+			color: @headingColor;
+			text-transform: uppercase;
 			
-		.divider {
+		}	
+		/*.divider {
 			background-color: @dividerColor;
 			display: inline-block;
 			vertical-align: middle;
 			height: 3px;
-			width: 387px;
+			width: 405px;
 			
 		}
 		h3 {
@@ -134,56 +175,87 @@ html, body {
 			color: @headingColor;
 			font-family: @headingFont;
 			text-transform: uppercase;
-		}
+		}*/
 		.container {
 			text-align: center;
+			margin-top: 30px;
 			div {
 				display: inline-block;
 				vertical-align: top;
 				width: 300px;
+				height: 355px;
 				background-color: #3a3a3a;
 				h4 {
 					border-bottom: 2px solid @headingColor;
 					color: #ffffff;
+					font-family: @headingFont;
+					text-transform: uppercase;
+					padding-bottom: 10px;
 				}
-				section {
-					padding: 20px;
-					p {
-						color: #ffffff;
-					}
-					.fb {
-						background: url(images/f.jpg) no-repeat;
-					}
-					.tw {
-						background: url(images/t.jpg) no-repeat;
-					}
-					.yt {
-						background: url(images/y.jpg) no-repeat;
-					}
-					.v {
-						background: url(images/v.jpg) no-repeat;
-					}
-					.ring {
-						background: url(images/r.jpg) no-repeat;
-					}
-					span {
-						padding-right: 50px;
-						padding-bottom: 20px;
-					}
-					.button {
-						padding: 10px;
-						color: #ffffff;
-						background-color: #f6914d;
-						text-decoration: none;
-					}
+				/*section {
+					padding: 20px; */
+				p {
+					color: @pColor;
+					text-align: left;
+					padding: 0px 35px;
+					font-family: "Arial";
+					font-size: 14px;
 				}
+				.fb {
+					background: url(webwewant/images/f.jpg) no-repeat;
+				}
+				.tw {
+					background: url(webwewant/images/t.jpg) no-repeat;
+				}
+				.yt {
+					background: url(webwewant/images/y.jpg) no-repeat;
+				}
+				.v {
+					background: url(webwewant/images/v.jpg) no-repeat;
+				}
+				.ring {
+					background: url(webwewant/images/r.jpg) no-repeat;
+				}
+				span {
+					padding-right: 50px;
+					padding-bottom: 20px;
+				}
+				.button {
+					padding: 10px;
+					color: #ffffff;
+					background-color: #f6914d;
+					text-decoration: none;
+					font-family: "Helvetica";
+					font-weight: bold;
+					font-size: 14px;
+				}
+				img {
+					width: 300px;
+					height: 281px;
+				}
+				/*}*/
 				
+			}
+			div:first-child {
+				margin-right: 20px;
+			}
+			div:nth-child(2) {
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+			div:last-child {
+				margin-left: 20px;
 			}
 			.projects {
 				background-color: #ffffff;
+				height: 435px;
 				h4 {
 					color: #434345;
 					border-bottom: none;
+				}
+				p {
+					text-align: center;
+					font-family: "Arial";
 				}
 			}
 			.projects:first-child {
@@ -204,6 +276,7 @@ html, body {
 			ul {
 				display: inline-block;
 				float: left;
+				padding-left: 0px;
 				li {
 					display: inline;
 					list-style-type: none;
@@ -216,7 +289,7 @@ html, body {
 						font-size: 14px;
 						padding-left: 30px;
 						padding-right: 30px;
-						
+						color: #424347;
 					}
 					.selected {
 							color: #ffffff;
@@ -232,7 +305,7 @@ html, body {
 				text-decoration: none;
 			}
 			.fullinfo:after {
-				content: url(images/right-arrow.jpg);
+				content: url(webwewant/images/arrow-side.png);
 			}
 			
 		}
@@ -286,7 +359,7 @@ html, body {
 							text-decoration: none;
 						}
 						.fullinfo:after {
-							content: url(images/right-arrow.jpg);
+							content: url(webwewant/images/arrow-side.png);
 						}
 					}			
 			}
@@ -309,7 +382,7 @@ html, body {
 				font-size: 12px;
 				vertical-align: middle;
 				margin: 0px 50px;
-				background: url(images/partner-3.jpg) no-repeat;	
+				background: url(webwewant/images/partner-3.jpg) no-repeat;	
 			}
 			div:nth-of-type(2) {
 				padding-left: 60px;
@@ -317,7 +390,7 @@ html, body {
 				font-size: 12px;
 				vertical-align: middle;
 				margin: 0px 50px;
-				background: url(images/partner5.jpg) no-repeat;
+				background: url(webwewant/images/partner5.jpg) no-repeat;
 			}*/
 			img {
 				
